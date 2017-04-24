@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.darko.myapplication" >
+
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Background">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Players"></activity>
+        <activity android:name=".UserPointGuards"></activity>
+        <activity android:name=".PlayersStats"></activity>
+        <activity android:name=".UserShootingGuards"></activity>
+        <activity android:name=".UserSmallForwards"></activity>
+        <activity android:name=".UserPowerForwards"></activity>
+        <activity android:name=".UserCenters"></activity>
+        <activity android:name=".User_Account"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Background">
+        </activity>
+        <activity
+            android:name=".Signup_Activity"
+            android:theme="@style/Background">
+        </activity>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+</manifest>
