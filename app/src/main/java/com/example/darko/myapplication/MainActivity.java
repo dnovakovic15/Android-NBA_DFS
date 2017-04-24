@@ -12,6 +12,9 @@ import android.widget.Toast;
 
 import java.util.concurrent.ExecutionException;
 
+/**
+ * GUI for log in screen.
+ */
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Delete line below later. There to skip log in process.
         //onLoginSuccess("dnovakovic21@yahoo.com");
+        //Testing
 
         Log.d(TAG, "Login");
 
