@@ -31,7 +31,7 @@ class API_GetStartTime extends AsyncTask<String, Object, String> {
         HttpURLConnection conn = null;
         String line;
         try {
-            url = new URL("http://52.15.238.167/project/api_get_time.php.");
+            url = new URL("http://52.14.155.129/project/api_get_time.php.");
             conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());

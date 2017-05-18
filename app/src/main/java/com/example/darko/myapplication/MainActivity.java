@@ -69,7 +69,9 @@ public class MainActivity extends AppCompatActivity {
                         } catch (ExecutionException e) {
                             e.printStackTrace();
                         }
-                        if(verification.indexOf("p") > -1){
+                        if(verification.indexOf("pass") > -1){
+                            TokenSaver.setToken(getApplicationContext(), verification.substring(8));
+                            System.out.println("Token: " + TokenSaver.getToken(getApplicationContext()));
                             onLoginSuccess(email);
                         }
                         else{

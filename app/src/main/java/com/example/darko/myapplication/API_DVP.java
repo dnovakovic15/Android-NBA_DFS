@@ -43,7 +43,7 @@ class API_DVP extends AsyncTask<String, Object, List<String>> {
 
         //Connects to server to pull up the requested Players's stats.
         try {
-            url = new URL("http://52.15.238.167/project/get_dvp.php.");
+            url = new URL("http://52.14.155.129/project/get_dvp.php.");
             conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             //conn.setRequestMethod("POST");

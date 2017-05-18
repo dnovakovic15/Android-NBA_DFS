@@ -35,7 +35,7 @@ class API_PlayingToday extends AsyncTask<Integer, Object, List<String>> {
         HttpURLConnection conn = null;
         String line, result;
         try {
-            url = new URL("http://52.15.238.167/project/api_players.php.");
+            url = new URL("http://52.14.155.129/project/api_players.php.");
             conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());

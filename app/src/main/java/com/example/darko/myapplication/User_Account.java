@@ -76,7 +76,7 @@ class User_Account extends AppCompatActivity {
 
         //Start asynctask in order to fetch user info from server.
         try {
-            user_stats = asyncTask1.execute(email).get();
+            user_stats = asyncTask1.execute(email, TokenSaver.getToken(getApplicationContext())).get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

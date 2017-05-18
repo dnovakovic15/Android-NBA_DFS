@@ -31,7 +31,7 @@ class API_SendLineup extends AsyncTask<String, Object, String> {
 
         //Connects to server to pull up the requested Players's stats.
         try {
-            url = new URL("http://52.15.238.167/project/api_storelineup.php.");
+            url = new URL("http://52.14.155.129/project/api_storelineup.php.");
             conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());

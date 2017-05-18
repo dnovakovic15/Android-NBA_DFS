@@ -53,11 +53,11 @@ class PlayersStats extends MainActivity {
         }
 
         //Maps the position integer, received from the Players Intent, and maps it to the corresponding SQL database name for each position.
-        positionMap.add("pointguards");
-        positionMap.add("shootingguards");
-        positionMap.add("smallforwards");
-        positionMap.add("powerforwards");
-        positionMap.add("centers");
+        positionMap.add("pg");
+        positionMap.add("sg");
+        positionMap.add("sf");
+        positionMap.add("pf");
+        positionMap.add("c");
 
         try {
             finalStats = stats.execute(split[0], split[1], opponent).get();

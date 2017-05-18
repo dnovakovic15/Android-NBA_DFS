@@ -41,7 +41,7 @@ class API_StatFinder extends AsyncTask<String, Object, List<String>> {
 
         //Connects to server to pull up the requested player's stats.
         try {
-            url = new URL("http://52.15.238.167/project/api_usage.php.");
+            url = new URL("http://52.14.155.129/project/api_usage.php.");
             conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             //conn.setRequestMethod("POST");

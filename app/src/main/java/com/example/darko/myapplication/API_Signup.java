@@ -14,6 +14,10 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import javax.net.ssl.HttpsURLConnection;
+
+import static com.example.darko.myapplication.Certificate_Auth.DO_NOT_VERIFY;
+
 
 class API_Signup extends AsyncTask<String, Object, String> {
 
@@ -26,24 +30,29 @@ class API_Signup extends AsyncTask<String, Object, String> {
 
     protected String doInBackground(String... params) {
         URL url;
-        HttpURLConnection conn = null;
+        HttpsURLConnection https = null;
         String line;
 
 
         //Connects to server to pull up the requested Players's stats.
         try {
-            url = new URL("http://52.15.238.167/project/signup.php.");
-            conn = (HttpURLConnection) url.openConnection();
-            conn.setDoOutput(true);
-            //conn.setRequestMethod("POST");
-            OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
+            url = new URL("http://52.14.155.129/project/signup.php.");
+            HttpURLConnection http = null;
+
+            Certificate_Auth.trustAllHosts();
+            https = (HttpsURLConnection) url.openConnection();
+            https.setHostnameVerifier(DO_NOT_VERIFY);
+
+
+            https.setDoOutput(true);
+            OutputStreamWriter writer = new OutputStreamWriter(https.getOutputStream());
             StringBuilder sBuilder = new StringBuilder();
             //Pass the position and team abbreviation.
             writer.write("&email=" + params[0]);
             writer.write("&passcode=" + params[1]);
             writer.write("&name=" + params[2]);
             writer.flush();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(https.getInputStream()));
 
 
             while ((line = reader.readLine()) != null) {
@@ -60,7 +69,7 @@ class API_Signup extends AsyncTask<String, Object, String> {
         catch (IOException e) {
             System.out.print(e);
         } finally  {
-            conn.disconnect();
+            https.disconnect();
         }
 
         System.out.print("RESULT: " + result);

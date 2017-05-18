@@ -32,12 +32,13 @@ class API_GetInfo extends AsyncTask<String, Object, List<String>> {
         HttpURLConnection conn = null;
         String line, result;
         try {
-            url = new URL("http://52.15.238.167/project/api_get_info.php.");
+            url = new URL("http://52.14.155.129/project/api_get_info.php.");
             conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
             StringBuilder sBuilder = new StringBuilder();
             writer.write("&email=" + params[0]); //Position is indicated by a number starting with 0. 0 corresponds to the point guard position & 4 corresponds to the Center Position.
+            //writer.write("&token=" + params[1]);
             writer.flush();
             BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 
@@ -62,6 +63,7 @@ class API_GetInfo extends AsyncTask<String, Object, List<String>> {
             conn.disconnect();
         }
 
+        System.out.println("userinfo " + user_info);
         return user_info;
     }
 
