@@ -73,7 +73,7 @@ class Players extends AppCompatActivity {
         }
 
         try {
-            todayPlayers = asyncTask1.execute(position).get();
+            todayPlayers = asyncTask1.execute(position, TokenSaver.getToken(getApplicationContext())).get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

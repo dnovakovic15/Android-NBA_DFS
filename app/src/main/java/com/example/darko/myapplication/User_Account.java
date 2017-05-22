@@ -5,18 +5,15 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GridLabelRenderer;
 import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
-
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -97,6 +94,7 @@ class User_Account extends AppCompatActivity {
         optimizable.setEnabled(enabled);
         Button submitLineup = (Button) findViewById(R.id.submitLineup);
         submitLineup.setEnabled(enabled);
+
         if(enabled == false){
             optimizable.setTextColor(Color.GRAY);
             submitLineup.setTextColor(Color.GRAY);
@@ -500,7 +498,7 @@ class User_Account extends AppCompatActivity {
         }
 
         try {
-            status = asyncTask1.execute(player1.getName(), player2.getName(), player3.getName(), player4.getName(), player5.getName(), player6.getName(), player7.getName(), player8.getName(), email, Double.toString(player1.getPrice()), Double.toString(player2.getPrice()), Double.toString(player3.getPrice()), Double.toString(player4.getPrice()), Double.toString(player5.getPrice()), Double.toString(player6.getPrice()), Double.toString(player7.getPrice()), Double.toString(player8.getPrice())).get();
+            status = asyncTask1.execute(player1.getName(), player2.getName(), player3.getName(), player4.getName(), player5.getName(), player6.getName(), player7.getName(), player8.getName(), email, Double.toString(player1.getPrice()), Double.toString(player2.getPrice()), Double.toString(player3.getPrice()), Double.toString(player4.getPrice()), Double.toString(player5.getPrice()), Double.toString(player6.getPrice()), Double.toString(player7.getPrice()), Double.toString(player8.getPrice()), TokenSaver.getToken(getApplicationContext())).get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -523,7 +521,7 @@ class User_Account extends AppCompatActivity {
         String startTime = "0";
 
         try{
-            startTime = startTimeAPI.execute().get();
+            startTime = startTimeAPI.execute(TokenSaver.getToken(getApplicationContext())).get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

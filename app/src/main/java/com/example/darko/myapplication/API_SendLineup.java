@@ -55,6 +55,7 @@ class API_SendLineup extends AsyncTask<String, Object, String> {
             writer.write("&player6Salary=" + Double.parseDouble(params[14]));
             writer.write("&player7Salary=" + Double.parseDouble(params[15]));
             writer.write("&player8Salary=" + Double.parseDouble(params[16]));
+            writer.write("&token=" + params[17]);
             writer.flush();
             BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 

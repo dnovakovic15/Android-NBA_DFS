@@ -36,6 +36,7 @@ class API_GetStartTime extends AsyncTask<String, Object, String> {
             conn.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
             StringBuilder sBuilder = new StringBuilder();
+            writer.write("&token=" + params[0]);
             writer.flush();
             BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 

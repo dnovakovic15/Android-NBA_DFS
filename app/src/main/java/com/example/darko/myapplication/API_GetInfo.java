@@ -38,7 +38,7 @@ class API_GetInfo extends AsyncTask<String, Object, List<String>> {
             OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
             StringBuilder sBuilder = new StringBuilder();
             writer.write("&email=" + params[0]); //Position is indicated by a number starting with 0. 0 corresponds to the point guard position & 4 corresponds to the Center Position.
-            //writer.write("&token=" + params[1]);
+            writer.write("&token=" + params[1]);
             writer.flush();
             BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 

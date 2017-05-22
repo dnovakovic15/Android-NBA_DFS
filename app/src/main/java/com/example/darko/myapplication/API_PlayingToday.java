@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-class API_PlayingToday extends AsyncTask<Integer, Object, List<String>> {
+class API_PlayingToday extends AsyncTask<Object, Object, List<String>> {
 
     private List finalPlayers = new ArrayList();
 
@@ -30,7 +30,7 @@ class API_PlayingToday extends AsyncTask<Integer, Object, List<String>> {
     protected void onPreExecute() {
     }
 
-    protected List<String> doInBackground(Integer... params) {
+    protected List<String> doInBackground(Object... params) {
         URL url;
         HttpURLConnection conn = null;
         String line, result;
@@ -41,6 +41,7 @@ class API_PlayingToday extends AsyncTask<Integer, Object, List<String>> {
             OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
             StringBuilder sBuilder = new StringBuilder();
             writer.write("&position=" + params[0]); //Position is indicated by a number starting with 0. 0 corresponds to the point guard position & 4 corresponds to the Center Position.
+            writer.write("&token=" + params[1]);
             writer.flush();
             BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 
@@ -50,6 +51,7 @@ class API_PlayingToday extends AsyncTask<Integer, Object, List<String>> {
             result = sBuilder.toString();
             writer.close();
             reader.close();
+            System.out.println("result: " + result);
             JSONArray jArray = new JSONArray(result);
             List<Player> players = new ArrayList<Player>();
 
@@ -66,7 +68,7 @@ class API_PlayingToday extends AsyncTask<Integer, Object, List<String>> {
             }
 
             System.out.println("params: " + params[0]);
-            if(params[0] > 4){
+            if((int) params[0] > 4){
                 PriceComparator sorted = new PriceComparator(players);
                 finalPlayers = sorted.getSortedPlayers();
             }

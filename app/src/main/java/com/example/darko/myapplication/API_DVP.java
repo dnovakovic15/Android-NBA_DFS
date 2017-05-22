@@ -50,6 +50,7 @@ class API_DVP extends AsyncTask<String, Object, List<String>> {
             OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
             StringBuilder sBuilder = new StringBuilder();
             //Pass the position and team abbreviation.
+            writer.write("&token=" + params[2]);
             writer.write("&position=" + params[1]);
             writer.write("&team=" + params[0]);
             writer.flush();

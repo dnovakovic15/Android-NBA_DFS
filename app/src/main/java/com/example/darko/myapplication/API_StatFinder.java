@@ -50,6 +50,7 @@ class API_StatFinder extends AsyncTask<String, Object, List<String>> {
             writer.write("&first=" + firstName);
             writer.write("&last=" + lastName);
             writer.write("&opponent=" + params[2]);
+            writer.write("&token=" + params[3]);
             writer.flush();
             BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 

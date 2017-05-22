@@ -60,8 +60,8 @@ class PlayersStats extends MainActivity {
         positionMap.add("c");
 
         try {
-            finalStats = stats.execute(split[0], split[1], opponent).get();
-            dvpStats = dvp.execute(opponent, positionMap.get(position).toString()).get();
+            finalStats = stats.execute(split[0], split[1], opponent, TokenSaver.getToken(getApplicationContext())).get();
+            dvpStats = dvp.execute(opponent, positionMap.get(position).toString(), TokenSaver.getToken(getApplicationContext())).get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
