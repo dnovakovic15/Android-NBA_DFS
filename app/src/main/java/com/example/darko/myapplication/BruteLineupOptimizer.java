@@ -112,6 +112,9 @@ class BruteLineupOptimizer {
         Player team = new Player(lineuptest, totalTeamPoints, (int) totalInitialCost);
         optimal.add(team);
 
+        for(int i = 0; i < 8; i++) {
+            System.out.println("optimal: " + optimal.get(i).getName());
+        }
         return optimal;
 
     }

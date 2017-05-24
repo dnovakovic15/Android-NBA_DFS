@@ -1,6 +1,8 @@
 package com.example.darko.myapplication;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -134,7 +136,15 @@ class User_Account extends AppCompatActivity {
 
             setPlayersEasy(optimalPlayers);
         }
-        setGraph(user_stats.get(1).toString(), user_stats.get(19).toString(), user_stats.get(20).toString(), user_stats.get(21).toString());
+
+        //Determines if the setGraph method should be called based on the current orientation of the device.
+        int orientation=this.getResources().getConfiguration().orientation;
+        if(orientation == Configuration.ORIENTATION_PORTRAIT){
+            setGraph(user_stats.get(1).toString(), user_stats.get(19).toString(), user_stats.get(20).toString(), user_stats.get(21).toString());
+        }
+        else{
+            return;
+        }
     }
 
     //Sets the playerButton's names when passed an ArrayList filled with players. This method does the same as the setPlayers method further down, except it dosen't assign the player fields because it has been previously done.
@@ -429,6 +439,9 @@ class User_Account extends AppCompatActivity {
                     }
                     setPlayers(optimalPlayers);
                     break;
+                }
+                else{
+                    Toast.makeText(getBaseContext(), "Failed to Generate Lineup", Toast.LENGTH_LONG).show();
                 }
             }
         }
