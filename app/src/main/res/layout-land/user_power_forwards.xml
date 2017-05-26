@@ -31,53 +31,53 @@
             android:layout_height="match_parent">
 
             <Button
-                android:text="Point Guard #1"
+                android:text="Power Forward #1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/button1"
                 android:layout_weight=".15"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:backgroundTint="@android:color/background_light"
                 android:onClick="player1"/>
 
             <Button
-                android:text="Point Guard #2"
+                android:text="Power Forward #2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/button2"
                 android:layout_weight=".15"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:elevation="0dp"
                 android:backgroundTint="@android:color/background_light"
                 android:onClick="player2"/>
 
             <Button
-                android:text="Point Guard #3"
+                android:text="Power Forward #3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/button3"
                 android:layout_weight=".15"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:backgroundTint="@android:color/background_light"
                 android:onClick="player3"/>
 
             <Button
-                android:text="Point Guard #4"
+                android:text="Power Forward #4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/button4"
                 android:layout_weight=".15"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:backgroundTint="@android:color/background_light"
                 android:onClick="player4"/>
 
             <Button
-                android:text="Advance to Shooting Guards"
+                android:text="Advance to Centers"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/button5"
                 android:layout_weight=".155"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
                 android:textColor="@android:color/background_light"
                 android:elevation="22dp"

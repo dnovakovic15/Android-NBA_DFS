@@ -4,7 +4,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.3"
     defaultConfig {
-        applicationId "com.example.darko.myapplication"
+        applicationId "fantasy.nba.tool.myapplication"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
@@ -20,6 +20,10 @@ android {
     compileOptions {
         targetCompatibility 1.7
         sourceCompatibility 1.7
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 

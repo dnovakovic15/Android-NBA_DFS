@@ -53,13 +53,14 @@
 
                 <Button
                     android:text="Optimize"
-                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:backgroundTint="@color/backColor"
                     android:id="@+id/optimize"
                     android:layout_weight="0.58"
                     android:onClick="optimize"
                     android:textColor="@android:color/background_light"
-                    android:layout_height="40dp" />
+                    android:layout_width="125dp"
+                    android:layout_gravity="right" />
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -85,24 +86,9 @@
                     android:textColor="@android:color/white"
                     android:gravity="bottom|right"
                     android:textSize="14sp"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_marginBottom="5dp" />
             </LinearLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight=".4">>
-
-            <com.jjoe64.graphview.GraphView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/graph"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp" />
         </LinearLayout>
 
         <LinearLayout
